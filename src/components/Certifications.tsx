@@ -47,7 +47,7 @@ const Certifications = () => {
 
                             <div className="flex gap-3">
                                 <a
-                                    href={cert.file}
+                                    href={import.meta.env.BASE_URL + cert.file.substring(1)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={(e) => e.stopPropagation()}
@@ -57,7 +57,7 @@ const Certifications = () => {
                                     Voir
                                 </a>
                                 <a
-                                    href={cert.file}
+                                    href={import.meta.env.BASE_URL + cert.file.substring(1)}
                                     download
                                     onClick={(e) => e.stopPropagation()}
                                     className="flex-1 px-4 py-2 bg-white/5 hover:bg-white/10 text-light rounded-lg font-medium transition-colors flex items-center justify-center gap-2 text-sm"

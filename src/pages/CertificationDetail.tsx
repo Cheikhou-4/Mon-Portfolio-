@@ -6,6 +6,7 @@ import { certificationsData } from '../data/certifications';
 const CertificationDetail = () => {
     const { id } = useParams();
     const cert = certificationsData.find(c => c.id === id);
+    const fileUrl = cert ? import.meta.env.BASE_URL + cert.file.substring(1) : '';
 
     if (!cert) {
         return (
@@ -61,7 +62,7 @@ const CertificationDetail = () => {
 
                         <div className="flex gap-4">
                             <a
-                                href={cert.file}
+                                href={fileUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-6 py-3 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-full font-medium transition-colors flex items-center gap-2"
@@ -70,7 +71,7 @@ const CertificationDetail = () => {
                                 Voir le certificat
                             </a>
                             <a
-                                href={cert.file}
+                                href={fileUrl}
                                 download
                                 className="px-6 py-3 bg-white/5 hover:bg-white/10 rounded-full font-medium transition-colors flex items-center gap-2"
                             >
@@ -208,7 +209,7 @@ const CertificationDetail = () => {
                                 <h3 className="text-xl font-bold mb-4">Actions</h3>
                                 <div className="space-y-3">
                                     <a
-                                        href={cert.file}
+                                        href={fileUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-2 text-light/70 hover:text-primary transition-colors"
@@ -217,7 +218,7 @@ const CertificationDetail = () => {
                                         Voir le certificat
                                     </a>
                                     <a
-                                        href={cert.file}
+                                        href={fileUrl}
                                         download
                                         className="flex items-center gap-2 text-light/70 hover:text-primary transition-colors"
                                     >
