@@ -20,7 +20,7 @@ const Hero = () => {
                     >
                         <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 mx-auto relative z-10 bg-white/10 flex items-center justify-center">
                             <img
-                                src="/images/profile.jpg"
+                                src={import.meta.env.BASE_URL + "images/profile.jpg"}
                                 alt="Cheikhou Niang"
                                 className="w-full h-full object-contain"
                             />
